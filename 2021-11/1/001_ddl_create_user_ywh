@@ -1,0 +1,16 @@
+CREATE TABLE `user` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(50)  NOT NULL COMMENT '用户名',
+  `nick_name` varchar(100)  NOT NULL COMMENT '昵称',
+  `email` varchar(50)  NOT NULL COMMENT '邮箱',
+  `mobile_phone` varchar(11)  NOT NULL COMMENT '手机',
+  `passwd` varchar(50)  NOT NULL COMMENT '密码',
+  `use_state` varchar(2)  NOT NULL DEFAULT '1' COMMENT '用户状态1：启用 2 禁用',
+  `del_state` varchar(2)  NOT NULL DEFAULT '1' COMMENT '删除状态1：正常使用 2 删除',
+  `remark` varchar(100) DEFAULT NULL COMMENT '备注',
+  `create_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `create_by` varchar(50)  DEFAULT 'system',
+  `update_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `update_by` varchar(50)  DEFAULT 'system',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;SELECT * FROM `user`
